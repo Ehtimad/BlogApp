@@ -1,0 +1,55 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "AddOrUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>Add or Edit</h2>
+    <br />
+    <form asp-controller="Blog" asp-action="AddOrUpdate" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="form-control" placeholder="Title">
+        </div>
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <input asp-for="Description" class="form-control" placeholder="Description">
+        </div>
+        <div class="form-group">
+            <label asp-for="Body"></label>
+            <input asp-for="Body" class="form-control" placeholder="Body">
+        </div>
+        <div class="form-group">
+            <label asp-for="Image">Image</label>
+            <input asp-for="Image" class="form-control" placeholder="Image">
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input asp-for="isHome" class="form-check-input">
+                Is Home
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input asp-for="isApproved" class="form-check-input">
+                Is Approved
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input asp-for="isSlider" class="form-check-input">
+                Is Slider
+            </label>
+        </div>
+        <div class="form-group">
+            <label asp-for="CategorId"></label>
+            <select asp-for="CategorId" class="form-control" asp-items="ViewBag.Categories">
+                <option disabled selected value="">Select Category</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+

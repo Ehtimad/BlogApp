@@ -1,0 +1,14 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>
+    <b>
+        @Model.Title isimi kayti silmek istiyormusunuz?
+    </b>
+</h2>
+<form asp-controller="Blog" asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-primary">Delete</button>
+</form>

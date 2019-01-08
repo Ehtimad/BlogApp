@@ -1,0 +1,13 @@
+﻿@model Blog
+
+<div class="card mb-2">
+    <div class="card-header">
+        @Model.Title
+    </div>
+    <img class="card-img-top" src="~/img/@Model.Image" alt="@Model.Title">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Title</h5>
+        <p class="card-text">@Model.Description</p>
+        <p class="card-text">@Model.Body</p>
+    </div>
+</div>
